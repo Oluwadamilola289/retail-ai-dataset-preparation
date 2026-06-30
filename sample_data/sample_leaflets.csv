@@ -1,0 +1,7 @@
+leaflet_id,page,brand,product,x1,y1,x2,y2,price
+L001,1,Coca-Cola,Coke Zero,15,20,120,180,2.50
+L001,1,Pepsi,Pepsi Max,130,20,240,180,2.40
+L001,2,Nestle,KitKat,20,30,140,200,1.20
+L002,1,Kellogg's,Corn Flakes,25,40,180,220,4.99
+L002,2,Heinz,Tomato Ketchup,35,50,190,230,3.49
+L003,1,Unilever,Dove Soap,40,60,200,240,2.99
