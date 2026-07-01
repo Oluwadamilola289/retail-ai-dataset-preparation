@@ -1,3 +1,5 @@
+from validate_coordinates import validate_coordinates
+from validate_prices import validate_prices
 import pandas as pd
 
 from clean_dataset import (
@@ -25,6 +27,9 @@ def main():
 
     df = standardize_text(df)
 
+    invalid_boxes = validate_coordinates(df)
+    invalid_prices = validate_prices(df)
+
     # Save cleaned dataset
     save_clean_dataset(
         df,
@@ -36,6 +41,8 @@ def main():
     print("================================")
     print(f"Duplicate rows removed : {duplicates_removed}")
     print(f"Empty rows removed     : {empty_rows_removed}")
+    print(f"Invalid bounding boxes : {len(invalid_boxes)}")
+    print(f"Invalid prices         : {len(invalid_prices)}")
     print(f"Final rows             : {len(df)}")
 
 
