@@ -1,37 +1,50 @@
-# 🛒 Retail AI Dataset Preparation Pipeline
+# 📊 Retail AI Dataset Preparation Pipeline
 
-A production-style Python pipeline for validating, cleaning, and preparing retail product datasets for AI model training.
+A production-style Python data preparation pipeline that cleans, validates, and monitors retail product datasets before AI model training.
 
+The project demonstrates modern data engineering practices including automated data validation, structured logging, configuration management, unit testing, GitHub Actions CI/CD, quality metrics generation, and an interactive Streamlit dashboard.
 ---
-
-## 📖 Overview
-
-This project demonstrates how raw retail product datasets can be transformed into clean, validated datasets suitable for machine learning and computer vision applications.
-
-The pipeline automates common data quality checks and preprocessing tasks required before AI model training.
 
 ---
 
 ## ✨ Features
 
-- ✅ Dataset validation
-- ✅ Duplicate row removal
-- ✅ Empty row removal
-- ✅ Text normalization
-- ✅ Coordinate validation
-- ✅ Price validation
-- ✅ Automatic quality report generation
-- ✅ Clean dataset export
-
+- Clean retail datasets using reusable Python modules
+- Remove duplicate records
+- Remove completely empty rows
+- Trim whitespace and standardize text
+- Validate bounding box coordinates
+- Validate product prices
+- Generate validation reports
+- Generate JSON quality metrics
+- Structured logging
+- Interactive Streamlit dashboard
+- Unit testing with Pytest
+- Automated GitHub Actions CI
 ---
 
-## 🛠 Tech Stack
+---
+## 🏗️ Pipeline Architecture
 
-- Python
-- Pandas
-- NumPy
-- Git
-- GitHub
+```text
+Raw CSV
+    │
+    ▼
+Load Dataset
+    │
+    ▼
+Data Cleaning
+    │
+    ▼
+Data Validation
+    │
+    ▼
+Reports & Metrics
+    │
+    ▼
+Streamlit Dashboard
+```
+---
 
 ---
 
@@ -40,128 +53,90 @@ The pipeline automates common data quality checks and preprocessing tasks requir
 ```text
 retail-ai-dataset-preparation/
 │
-├── scripts/
-│   ├── validate_dataset.py
-│   ├── clean_dataset.py
-│   ├── validate_coordinates.py
-│   ├── validate_prices.py
-│   ├── generate_report.py
-│   └── run_pipeline.py
-│
-├── sample_data/
-│   ├── sample_leaflets.csv
-│   └── clean_sample_leaflets.csv
-│
+├── config/
+├── images/
+├── logs/
 ├── reports/
-│   └── validation_report.txt
-│
+├── sample_data/
+├── scripts/
+├── tests/
+├── dashboard.py
 ├── requirements.txt
-├── README.md
-├── LICENSE
-└── .gitignore
+└── README.md
 ```
-
 ---
 
-## ⚙️ Pipeline Workflow
-
-```text
-Retail Dataset
-      │
-      ▼
-Dataset Validation
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-Coordinate Validation
-      │
-      ▼
-Price Validation
-      │
-      ▼
-Quality Report Generation
-      │
-      ▼
-Clean Dataset Output
-```
-
 ---
+## 🚀 Installation
 
-## 🚀 Getting Started
-
-Clone the repository:
+Clone the repository
 
 ```bash
 git clone https://github.com/Oluwadamilola289/retail-ai-dataset-preparation.git
+
+cd retail-ai-dataset-preparation
 ```
 
-Install dependencies:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
+---
 
-Run the pipeline:
+---
+
+## ▶️ Run the Pipeline
 
 ```bash
 python scripts/run_pipeline.py
 ```
 
+Outputs generated:
+
+- reports/validation_report.txt
+- reports/quality_metrics.json
+- logs/pipeline.log
 ---
 
-## 📊 Example Output
+---
+## 📊 Launch Dashboard
 
-```text
-Loaded 6 rows.
-
-Removed 0 duplicate rows.
-Removed 0 completely empty rows.
-Whitespace removed from text columns.
-Text standardized.
-
-Found 0 invalid bounding boxes.
-Found 0 invalid prices.
-
-Validation report generated.
-
-DATA CLEANING COMPLETE
-
-Duplicate rows removed : 0
-Empty rows removed : 0
-Invalid bounding boxes : 0
-Invalid prices : 0
-Final rows : 6
+```bash
+streamlit run dashboard.py
 ```
-
 ---
 
-## 📄 Generated Files
+---
+## 🛠️ Technologies
 
-The pipeline automatically creates:
-
-- `clean_sample_leaflets.csv`
-- `validation_report.txt`
-
+- Python
+- Pandas
+- Streamlit
+- Pytest
+- Git
+- GitHub Actions
+- JSON
 ---
 
-## 🔮 Future Improvements
+---
+## 🚀 Future Improvements
 
-- Brand validation
-- Logging
-- Unit tests
-- GitHub Actions (CI/CD)
-- Docker support
+- Docker containerization
+- Database integration
+- Scheduled pipeline execution
 - Cloud deployment
-- Configuration file support
-
+- Additional validation rules
+- Email notifications
 ---
 
+---
 ## 👩‍💻 Author
 
 **Oluwadamilola Osho**
 
-MSc Data Science | AI & Data Professional
+Data Analyst | AI Engineer | Machine Learning Enthusiast
 
-GitHub: https://github.com/Oluwadamilola289
+GitHub:
+https://github.com/Oluwadamilola289
+

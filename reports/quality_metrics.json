@@ -1,0 +1,9 @@
+{
+    "rows_loaded": 6,
+    "duplicates_removed": 0,
+    "empty_rows_removed": 0,
+    "invalid_bounding_boxes": 0,
+    "invalid_prices": 0,
+    "quality_score": 100,
+    "status": "READY FOR MODEL TRAINING"
+}

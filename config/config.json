@@ -1,0 +1,6 @@
+{
+    "input_file": "sample_data/sample_leaflets.csv",
+    "output_file": "sample_data/clean_sample_leaflets.csv",
+    "report_file": "reports/validation_report.txt",
+    "metrics_file": "reports/quality_metrics.json"
+}

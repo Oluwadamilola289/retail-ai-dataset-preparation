@@ -1,6 +1,9 @@
 from validate_coordinates import validate_coordinates
 from validate_prices import validate_prices
 from generate_report import generate_report
+from load_config import load_config
+from logger import setup_logger
+from generate_metrics import generate_metrics
 import pandas as pd
 
 from clean_dataset import (
@@ -15,9 +18,14 @@ from clean_dataset import (
 def main():
 
     # Load dataset
-    df = pd.read_csv("sample_data/sample_leaflets.csv")
+    logger = setup_logger()
 
-    print(f"Loaded {len(df)} rows.\n")
+    logger.info("Retail AI Pipeline Started")
+    config = load_config()
+
+    df = pd.read_csv(config["input_file"])
+
+    logger.info(f"Loaded {len(df)} rows.")
 
     # Cleaning pipeline
     df, duplicates_removed = remove_duplicates(df)
@@ -31,18 +39,30 @@ def main():
     invalid_boxes = validate_coordinates(df)
     invalid_prices = validate_prices(df)
 
+    
+
     # Save cleaned dataset
     save_clean_dataset(
-        df,
-        "sample_data/clean_sample_leaflets.csv"
+    df,
+    config["output_file"]
     )
     generate_report(
+       total_rows=len(df),
+       duplicates_removed=duplicates_removed,
+       empty_rows_removed=empty_rows_removed,
+       invalid_boxes=invalid_boxes,
+       invalid_prices=invalid_prices,
+    )
+    generate_metrics(
     total_rows=len(df),
     duplicates_removed=duplicates_removed,
     empty_rows_removed=empty_rows_removed,
     invalid_boxes=invalid_boxes,
     invalid_prices=invalid_prices,
     )
+    logger.info("Quality metrics generated.")
+    logger.info("Validation report generated.")
+    logger.info("Pipeline completed successfully.")
     print("\n================================")
     print("DATA CLEANING COMPLETE")
     print("================================")
@@ -51,7 +71,11 @@ def main():
     print(f"Invalid bounding boxes : {len(invalid_boxes)}")
     print(f"Invalid prices         : {len(invalid_prices)}")
     print(f"Final rows             : {len(df)}")
-
+    logger.info(f"Duplicate rows removed: {duplicates_removed}")
+    logger.info(f"Empty rows removed: {empty_rows_removed}")
+    logger.info(f"Invalid bounding boxes: {len(invalid_boxes)}")
+    logger.info(f"Invalid prices: {len(invalid_prices)}")
 
 if __name__ == "__main__":
+    
     main()
