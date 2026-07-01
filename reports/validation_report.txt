@@ -1,0 +1,22 @@
+
+====================================
+Retail AI Dataset Quality Report
+====================================
+
+Dataset Summary
+---------------
+Rows Loaded: 6
+
+Cleaning
+--------
+Duplicate Rows Removed : 0
+Empty Rows Removed     : 0
+
+Validation
+----------
+Invalid Bounding Boxes : 0
+Invalid Prices         : 0
+
+Final Status
+------------
+✅ DATASET READY FOR AI TRAINING

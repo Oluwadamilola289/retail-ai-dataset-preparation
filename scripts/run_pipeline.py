@@ -1,5 +1,6 @@
 from validate_coordinates import validate_coordinates
 from validate_prices import validate_prices
+from generate_report import generate_report
 import pandas as pd
 
 from clean_dataset import (
@@ -35,7 +36,13 @@ def main():
         df,
         "sample_data/clean_sample_leaflets.csv"
     )
-
+    generate_report(
+    total_rows=len(df),
+    duplicates_removed=duplicates_removed,
+    empty_rows_removed=empty_rows_removed,
+    invalid_boxes=invalid_boxes,
+    invalid_prices=invalid_prices,
+    )
     print("\n================================")
     print("DATA CLEANING COMPLETE")
     print("================================")
