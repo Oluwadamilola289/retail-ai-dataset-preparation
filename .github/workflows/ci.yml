@@ -28,12 +28,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Tests
-  run: |
-    pytest
+        run: |
+          pytest
 
-- name: Run Pipeline
-  run: |
-    pytest
-- name: Run Pipeline
-    run: |
-      python scripts/run_pipeline.py    
+      - name: Run Pipeline
+        run: |
+          python scripts/run_pipeline.py
