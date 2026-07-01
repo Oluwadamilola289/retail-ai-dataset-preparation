@@ -1,4 +1,14 @@
-# Retail AI Dataset Preparation
+# Production-Ready Retail AI Dataset Preparation Pipeline
+
+# Badges
+
+Python
+
+Pandas
+
+License
+
+Status
 
 ## Overview
 
@@ -14,7 +24,21 @@ Machine learning models rely on high-quality, well-structured data. Retail datas
 
 This project demonstrates a structured approach to preparing datasets for AI training.
 
----
+## Pipeline Architecture
+
+Raw Dataset
+      │
+      ▼
+Validation
+      │
+      ▼
+Cleaning
+      │
+      ▼
+Normalization
+      │
+      ▼
+Training Dataset
 
 ## Objectives
 
@@ -28,13 +52,58 @@ This project demonstrates a structured approach to preparing datasets for AI tra
 
 ## Tech Stack
 
+# Languages
+
 - Python
 - SQL
+
+# Data Engineering
+
 - Pandas
 - NumPy
-- Jupyter Notebook
+
+# Development
+
+Git
+GitHub
+
+# Environment
+
+Linux
+Virtual Environment
+Jupyter Notebook
 
 ---
+
+## Current Progress
+
+✅ Dataset Validation
+
+🟡 Dataset Cleaning
+
+🟡 Coordinate Normalization
+
+⬜ Train/Test Split
+
+⬜ JSON Export
+
+⬜ Unit Tests
+
+⬜ CI/CD
+
+=================================================
+
+RETAIL DATASET VALIDATION REPORT
+
+=================================================
+
+Rows: 6
+
+Columns: 9
+
+Duplicate Rows: 0
+
+Validation Complete
 
 ## Planned Repository Structure
 
@@ -61,4 +130,8 @@ docs/
 
 **Oluwadamilola Osho**
 
-MSc Data Science | AI & Data Professional
+AI Engineer | Data Scientist | Machine Learning Engineer
+
+MSc Data Science
+
+Currently building AI systems for retail data preparation and machine learning workflows.
