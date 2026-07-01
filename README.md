@@ -1,137 +1,167 @@
-# Production-Ready Retail AI Dataset Preparation Pipeline
+# 🛒 Retail AI Dataset Preparation Pipeline
 
-# Badges
-
-Python
-
-Pandas
-
-License
-
-Status
-
-## Overview
-
-This project demonstrates a production-style data preparation pipeline for machine learning applications. It focuses on transforming raw retail product data into clean, validated datasets suitable for AI model training.
-
-> **Note:** This repository is a portfolio project inspired by real-world AI data engineering workflows. All sample data is anonymized or synthetic to protect confidential information.
+A production-style Python pipeline for validating, cleaning, and preparing retail product datasets for AI model training.
 
 ---
 
-## Business Problem
+## 📖 Overview
 
-Machine learning models rely on high-quality, well-structured data. Retail datasets often contain inconsistent formatting, duplicate records, missing values, and invalid annotations, which can negatively impact model performance.
+This project demonstrates how raw retail product datasets can be transformed into clean, validated datasets suitable for machine learning and computer vision applications.
 
-This project demonstrates a structured approach to preparing datasets for AI training.
-
-## Pipeline Architecture
-
-Raw Dataset
-      │
-      ▼
-Validation
-      │
-      ▼
-Cleaning
-      │
-      ▼
-Normalization
-      │
-      ▼
-Training Dataset
-
-## Objectives
-
-- Validate incoming datasets
-- Clean and normalize records
-- Detect missing or inconsistent values
-- Prepare datasets for model training
-- Generate train/validation splits
+The pipeline automates common data quality checks and preprocessing tasks required before AI model training.
 
 ---
 
-## Tech Stack
+## ✨ Features
 
-# Languages
+- ✅ Dataset validation
+- ✅ Duplicate row removal
+- ✅ Empty row removal
+- ✅ Text normalization
+- ✅ Coordinate validation
+- ✅ Price validation
+- ✅ Automatic quality report generation
+- ✅ Clean dataset export
+
+---
+
+## 🛠 Tech Stack
 
 - Python
-- SQL
-
-# Data Engineering
-
 - Pandas
 - NumPy
-
-# Development
-
-Git
-GitHub
-
-# Environment
-
-Linux
-Virtual Environment
-Jupyter Notebook
+- Git
+- GitHub
 
 ---
 
-## Current Progress
+## 📁 Project Structure
 
-✅ Dataset Validation
-
-🟡 Dataset Cleaning
-
-🟡 Coordinate Normalization
-
-⬜ Train/Test Split
-
-⬜ JSON Export
-
-⬜ Unit Tests
-
-⬜ CI/CD
-
-=================================================
-
-RETAIL DATASET VALIDATION REPORT
-
-=================================================
-
-Rows: 6
-
-Columns: 9
-
-Duplicate Rows: 0
-
-Validation Complete
-
-## Planned Repository Structure
-
-```
-scripts/
-notebooks/
-sample_data/
-images/
-docs/
+```text
+retail-ai-dataset-preparation/
+│
+├── scripts/
+│   ├── validate_dataset.py
+│   ├── clean_dataset.py
+│   ├── validate_coordinates.py
+│   ├── validate_prices.py
+│   ├── generate_report.py
+│   └── run_pipeline.py
+│
+├── sample_data/
+│   ├── sample_leaflets.csv
+│   └── clean_sample_leaflets.csv
+│
+├── reports/
+│   └── validation_report.txt
+│
+├── requirements.txt
+├── README.md
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-## Future Improvements
+## ⚙️ Pipeline Workflow
 
-- Automated validation reports
-- Data quality dashboard
-- CI/CD workflow
+```text
+Retail Dataset
+      │
+      ▼
+Dataset Validation
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Coordinate Validation
+      │
+      ▼
+Price Validation
+      │
+      ▼
+Quality Report Generation
+      │
+      ▼
+Clean Dataset Output
+```
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Oluwadamilola289/retail-ai-dataset-preparation.git
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the pipeline:
+
+```bash
+python scripts/run_pipeline.py
+```
+
+---
+
+## 📊 Example Output
+
+```text
+Loaded 6 rows.
+
+Removed 0 duplicate rows.
+Removed 0 completely empty rows.
+Whitespace removed from text columns.
+Text standardized.
+
+Found 0 invalid bounding boxes.
+Found 0 invalid prices.
+
+Validation report generated.
+
+DATA CLEANING COMPLETE
+
+Duplicate rows removed : 0
+Empty rows removed : 0
+Invalid bounding boxes : 0
+Invalid prices : 0
+Final rows : 6
+```
+
+---
+
+## 📄 Generated Files
+
+The pipeline automatically creates:
+
+- `clean_sample_leaflets.csv`
+- `validation_report.txt`
+
+---
+
+## 🔮 Future Improvements
+
+- Brand validation
+- Logging
 - Unit tests
+- GitHub Actions (CI/CD)
+- Docker support
+- Cloud deployment
+- Configuration file support
 
 ---
 
-## Author
+## 👩‍💻 Author
 
 **Oluwadamilola Osho**
 
-AI Engineer | Data Scientist | Machine Learning Engineer
+MSc Data Science | AI & Data Professional
 
-MSc Data Science
-
-Currently building AI systems for retail data preparation and machine learning workflows.
+GitHub: https://github.com/Oluwadamilola289
